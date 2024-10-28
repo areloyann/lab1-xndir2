@@ -1,6 +1,9 @@
 #include <iostream>
-using namespace std;
+#include <cmath> 
+
 int gcd(int a, int b) {
+    a = abs(a); 
+    b = abs(b); 
     while (b != 0) {
         int temp = b;
         b = a % b;
@@ -8,9 +11,11 @@ int gcd(int a, int b) {
     }
     return a;
 }
+
 int lcm(int a, int b) {
-    return (a * b) / gcd(a, b);
+    return abs(a * b) / gcd(a, b); 
 }
+
 int main() {
     int num1, num2;
     cout << "Nermuceq tvery: ";
